@@ -1,7 +1,7 @@
 package com.example.provincycricket.service;
 
 import java.util.List;
-
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +28,23 @@ public class ProfileServiceImpl implements ProfileService{
 		return playerRepo.findAll();
 	}
 
+	@Override
+	@Transactional
+	public List<Object> LeaderBoard() {
+		//System.out.println("LIST-->"+playerRepo.findByAvgLessThan(40.0));
+		return playerRepo.LeaderBoard();
+		//return playerRepo.OrderByAvgDesc();		
+	}
+	
+	//@Override
+	/*
+	 * @Transactional public List<Profile> colVal(){ return
+	 * playerRepo.showFewColumns(); }
+	 */
+	
+	
 
+	
 	
 }
 	

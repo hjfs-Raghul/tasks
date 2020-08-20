@@ -14,7 +14,8 @@ enum BatType{
 
 enum BowlType{
 	RIGHT,
-	LEFT;
+	LEFT,
+	NIL;
 }
 
 @Entity
@@ -31,7 +32,31 @@ public class Profile {
 	private BatType batting;
 	@Column(name = "Bowl_Type")	
 	private BowlType bowling;
+	@Column(name = "Matches")
+	private int matches;
+	@Column(name = "Total_Runs")
+	private int total;
+	@Column(name = "Average")
+	private double avg;
 	
+	public int getMatches() {
+		return matches;
+	}
+	public void setMatches(int matches) {
+		this.matches = matches;
+	}
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
+	}
+	public double getAvg() {
+		return avg;
+	}
+	public void setAvg(double avg) {
+		this.avg = avg;
+	}
 	public Long getId() {
 		return Id;
 	}
@@ -67,4 +92,8 @@ public class Profile {
 	private Profile() {
 		//Cannot create new Player with empty profile values
 	}
+	/*
+	 * public Profile(String name , double avg) { this.avg = avg; this.name = name;
+	 * }
+	 */
 }
